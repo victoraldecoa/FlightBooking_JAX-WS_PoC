@@ -21,17 +21,6 @@ public class OrderClient {
         URL url = getWSDLURL(args[0]);
         OrderClient client = new OrderClient();
         client.processOrder(url);
-
-        url = getWSDLURL("http://localhost:8080/OrderProcessWeb/authorizeuser");
-        AuthorizeUserClientService authUserService = new AuthorizeUserClientService(url, new QName("http://jawxs.ibm.tutorial/jaxws/authorizeuser", "AuthorizeUser"));
-        AuthorizeUserService port = authUserService.getAuthUserPort();
-        String token = port.authUser("victoraldecoa", "123456");
-
-        if (token != null) {
-            System.out.println("User token is " + token);
-        } else {
-            System.out.println("User not authorized. Username or password are wrong");
-        }
     }
 
     private static URL getWSDLURL(String urlStr) {
@@ -57,6 +46,14 @@ public class OrderClient {
         OrderBean orderResponse = port.processOrder(order);
 
         System.out.println("Order id is " + orderResponse.getOrderId());
+        
+        String token = port.authUser("victoraldecoa", "123456");
+
+        if (token != null) {
+            System.out.println("User token is " + token);
+        } else {
+            System.out.println("User not authorized. Username or password are wrong");
+        }
 
     }
 

@@ -32,4 +32,22 @@ public interface OrderProcessService {
     public OrderBean processOrder(
         @WebParam(name = "arg0", targetNamespace = "")
         OrderBean arg0);
+    
+            
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @return
+     *     returns string containing token
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "authUser", targetNamespace = "http://jawxs.ibm.tutorial/jaxws/orderprocess", className = "com.ibm.jaxws.tutorial.service.client.AuthorizeUser")
+    @ResponseWrapper(localName = "authUserResponse", targetNamespace = "http://jawxs.ibm.tutorial/jaxws/orderprocess", className = "com.ibm.jaxws.tutorial.service.client.AuthorizeUserResponse")
+    public String authUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 }

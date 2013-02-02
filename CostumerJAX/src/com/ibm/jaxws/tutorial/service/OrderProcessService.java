@@ -48,4 +48,13 @@ public class OrderProcessService {
 		return orderBean;
 	}
 
+        @WebMethod
+        public String authUser(String userName, String password) {
+            if (userName.equals("victoraldecoa") && password.equals("123456")) {
+                return "jfdoKJgUOUG8SD89568gGDhjkgid";
+            }
+            else {
+                return null;
+            }
+        }
 }
