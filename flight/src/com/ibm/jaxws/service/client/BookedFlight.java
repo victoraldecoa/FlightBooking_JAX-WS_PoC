@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ibm.jaxws.service.client;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,8 +17,6 @@ import javax.xml.bind.annotation.XmlType;
 //	 <element name="to" type="{http://www.w3.org/2001/XMLSchema}string"/>
 //	 <element name="date" type="{http://www.w3.org/2001/XMLSchema}string"/>
 //	 <element name="price" type="{http://www.w3.org/2001/XMLSchema}double"/>
-//	 <element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/>
-//	 <element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string"/>
 //   </sequence>
 // </restriction>
 //</complexContent>
@@ -35,12 +29,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="bookedFlight", j = {
-    "bookingid",
-    "",
-    "",
-    "",
+@XmlType(name="bookedFlight", propOrder = {
+    "firstname",
+    "lastname",
+    "bookingId",
+    "from",
+    "from",
+    "date",
+    "price"
+
 })
 public class BookedFlight {
+    
+    protected String bookingId;
+//    protected int qty; number of flights, is it needed??
+//
+//    public int getQty() {
+//        return qty;
+//    }
+//
+//    public void setQty(int qty) {
+//        this.qty = qty;
+//    }
+
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(String value) {
+        this.bookingId = value;
+    }
     
 }
