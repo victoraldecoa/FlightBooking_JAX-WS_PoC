@@ -43,8 +43,8 @@ public interface OrderProcessService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "authUser", targetNamespace = "http://jawxs.ibm.tutorial/jaxws/orderprocess", className = "com.ibm.jaxws.tutorial.service.client.AuthorizeUser")
-    @ResponseWrapper(localName = "authUserResponse", targetNamespace = "http://jawxs.ibm.tutorial/jaxws/orderprocess", className = "com.ibm.jaxws.tutorial.service.client.AuthorizeUserResponse")
+    @RequestWrapper(localName = "authUser", targetNamespace = "http://jawxs.ibm.tutorial/jaxws/orderprocess")
+    @ResponseWrapper(localName = "authUserResponse", targetNamespace = "http://jawxs.ibm.tutorial/jaxws/orderprocess")
     public String authUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,

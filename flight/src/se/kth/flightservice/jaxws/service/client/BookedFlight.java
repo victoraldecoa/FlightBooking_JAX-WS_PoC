@@ -1,4 +1,4 @@
-package com.ibm.jaxws.service.client;
+package se.kth.flightservice.jaxws.service.client;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

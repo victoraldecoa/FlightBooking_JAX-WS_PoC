@@ -1,4 +1,4 @@
-package com.ibm.jaxws.service.bean;
+package se.kth.flightservice.jaxws.service.bean;
 
 public class FlightBookingBean {
     

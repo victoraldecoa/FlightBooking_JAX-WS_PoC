@@ -4,3 +4,4 @@
 *.jar
 *.war
 *.ear
+/flight/build/
