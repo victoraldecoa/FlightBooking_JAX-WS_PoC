@@ -39,4 +39,16 @@ public interface FlightBookingProcessService {
     @RequestWrapper(localName = "checkItinerary", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess")
     @ResponseWrapper(localName = "checkItineraryResponse", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess", className = "com.ibm.jaxws.tutorial.service.client.CheckItineraryReturn")
     public Flight[] checkItinerary(String depCity, String destCity, String token);
+    
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "checkAvailable", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess")
+    @ResponseWrapper(localName = "checkAvailableResponse", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess")
+    public float checkAvailable(Flight[] flights, String date, String token);
+
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "bookTicket", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess")
+    @ResponseWrapper(localName = "bookTicketResponse", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess")
+    public String bookTicket(Flight[] flights, String date, String creditCard, String token);
 }

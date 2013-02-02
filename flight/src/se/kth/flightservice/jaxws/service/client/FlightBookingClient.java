@@ -85,5 +85,33 @@ public class FlightBookingClient {
             }
         }
 
+        float price = 0.0f;
+        String date = null;
+        
+        while(price == 0.0f) {
+            System.out.print("Select a date (aaaa-mm-dd): ");
+            date = input.next();
+            
+            price = port.checkAvailable(flights, date, token);
+            
+            if (price == 0.0f) {
+                System.out.println("No flights available in that date. Please try another.");
+            } else {
+                System.out.println("The price for this flight is " + price + " kr.");
+            }
+        }
+        
+        System.out.print("If you want to proceed with the booking, please insert the credit card. "
+                         + "Otherwise just press enter: ");
+        String creditCard = input.next();
+        
+        if (!creditCard.equals("")) {
+            String bookingId;
+            
+            bookingId = port.bookTicket(flights, date, creditCard, token);
+            
+            System.out.println("Your booking id is " + bookingId + ".");
+        }
+        System.out.println("Thank you for using our services!");
     }
 }

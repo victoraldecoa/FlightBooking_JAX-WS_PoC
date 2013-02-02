@@ -1,6 +1,5 @@
 package se.kth.flightservice.jaxws.service;
 
-import se.kth.flightservice.jaxws.service.bean.FlightBookingBean;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
@@ -18,17 +17,6 @@ targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess"
 //are document-literal.
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public class FlightBookingService {
-
-    @WebMethod
-    public FlightBookingBean processBooking(FlightBookingBean flightBookingBean) {
-        return flightBookingBean;
-        // Do processing...
-        // Booking reservations made (Items ordered are)
-        //Process Booking.
-        //Set the Booking Id.
-
-    }
-
     @WebMethod
     public String authUser(String userName, String password) {
         // TODO remove mockup database
@@ -47,10 +35,14 @@ public class FlightBookingService {
     
     String[] possibleCities = { "Madrid", "Venice", "Lisbon", "Stockholm" };
     
+    private boolean isTokenValid(String token) {
+        // TODO check token in the list of connected users
+        return token.equals("jfdoKJgUOUG8SD89568gGDhjkgid");
+    }
+    
     @WebMethod
     public Flight[] checkItinerary(String depCity, String destCity, String token) {
-        // TODO check token in the list of connected users
-        if (!token.equals("jfdoKJgUOUG8SD89568gGDhjkgid")) {
+        if (!isTokenValid(token)) {
             return null;
         }
         
@@ -80,5 +72,27 @@ public class FlightBookingService {
         result[1].setDestinationCity(destCity);
         
         return result;
+    }
+    
+    @WebMethod
+    public float checkAvailable(Flight[] itinerary, String date, String token) {
+        if (!isTokenValid(token)) {
+            return 0.0f;
+        }
+        
+        if (!date.equals("2013-02-06")) {
+            return 0.0f;
+        }
+        
+        return 1500f;
+    }
+    
+    @WebMethod
+    public String bookTicket(Flight[] itinerary, String date, String creditCard, String token) {
+        if (!isTokenValid(token)) {
+            return "";
+        }
+        
+        return "568432";
     }
 }
