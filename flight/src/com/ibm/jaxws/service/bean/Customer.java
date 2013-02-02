@@ -1,9 +1,5 @@
 package com.ibm.jaxws.service.bean;
 
-/**
- *
- * @author ALEX
- */
 public class Customer {
     private String customerId;
 
@@ -11,6 +7,10 @@ public class Customer {
 
 	private String lastName;
 
+        private String userName;
+        
+        private String password;
+        
 	private String creditCardNumber;
 
 
@@ -45,4 +45,20 @@ public class Customer {
 	public void setCreditCardNumber(String creditCardNumber) {
 		this.creditCardNumber = creditCardNumber;
 	}
+
+        public String getUserName() {
+            return userName;
+        }
+        
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }  
 }
