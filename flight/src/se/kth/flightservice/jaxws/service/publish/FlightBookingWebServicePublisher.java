@@ -9,7 +9,7 @@ import se.kth.flightservice.jaxws.service.FlightBookingService;
 
 /**
  *
- * @author ALEX
+ * @author Alexandra and Victor
  */
 public class FlightBookingWebServicePublisher {
 

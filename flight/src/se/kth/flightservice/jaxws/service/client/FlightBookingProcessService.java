@@ -33,4 +33,10 @@ public interface FlightBookingProcessService {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+    
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "checkItinerary", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess")
+    @ResponseWrapper(localName = "checkItineraryResponse", targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess", className = "com.ibm.jaxws.tutorial.service.client.CheckItineraryReturn")
+    public Flight[] checkItinerary(String depCity, String destCity, String token);
 }

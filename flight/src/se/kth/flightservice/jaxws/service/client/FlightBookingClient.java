@@ -42,33 +42,47 @@ public class FlightBookingClient {
     }
 
     public void processBooking(URL url) {
-
         FlightBookingProcess flightBookingProcessingService = new FlightBookingProcess(url, qName);
-
-        /*
-        System.out.println("Service is" + flightBookingProcessingService);
-
-        
-        
-        FlightBookingBean flightBooking = populateOrder();
-*/
-        
         FlightBookingProcessService port = flightBookingProcessingService.getFlightBookingProcessPort();
-        
-        Scanner input=new Scanner(System.in);
-        
-        System.out.print("Username: ");
-        String userName = input.next();
-        
-        System.out.print("Password: ");
-        String password = input.next();
-        
-        String token = port.authUser(userName, password);
 
-        if (token != null) {
-            System.out.println("User token is " + token);
-        } else {
-            System.out.println("User not authorized. Username or password are wrong");
+        Scanner input = new Scanner(System.in);
+        String token = null;
+
+        // Authenticating user
+        while (token == null) {
+            System.out.print("Username: ");
+            String userName = input.next();
+
+            System.out.print("Password: ");
+            String password = input.next();
+
+            token = port.authUser(userName, password);
+
+            if (token != null) {
+                System.out.println("User token is " + token);
+            } else {
+                System.out.println("Username or password are wrong. Try again.\n");
+            }
+        }
+        
+        Flight[] flights = new Flight[0];
+        while (flights.length == 0) {
+            System.out.print("Departure city: ");
+            String depCity = input.next();
+
+            System.out.print("Destination city: ");
+            String destCity = input.next();
+            
+            flights = port.checkItinerary(depCity, destCity, token);
+            
+            if (flights.length > 0) {
+                System.out.println("A possible itinerary is:");
+                for (Flight flight : flights) {
+                    System.out.println("    Dep: " + flight.departureCity + "    Dest: " + flight.destinationCity);
+                }
+            } else {
+                System.out.println("No routes for these cities. Please try another.");
+            }
         }
 
     }
