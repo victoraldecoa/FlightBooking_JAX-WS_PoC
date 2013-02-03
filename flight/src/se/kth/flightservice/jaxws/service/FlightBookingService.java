@@ -17,15 +17,26 @@ targetNamespace = "http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess"
 //are document-literal.
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public class FlightBookingService {
+    private String generateKey(String userName, String password) {
+        // TODO generate a real unique key and add it on user's list
+        return "jfdoKJgUOUG8SD89568gGDhjkgid";
+    }
+    
+    // TODO remove mockup database
+    private String[] userNames = { "victor", "alex", "admin" };
+    private String[] passwords = { "123456", "654321", "StrongPassword" };
+    
     @WebMethod
     public String authUser(String userName, String password) {
-        // TODO remove mockup database
-        if (userName.equals("victoraldecoa") && password.equals("123456")) {
-            // TODO generate a real unique key and add it on user's list
-            return "jfdoKJgUOUG8SD89568gGDhjkgid";
-        } else {
-            return null;
+        // TODO use real database
+        for (int i = 0; i < userNames.length; i++) {
+            if (userNames[i].equals(userName) && passwords[i].equals(password)) {
+                return generateKey(userName, password);
+            }
         }
+        
+        // no user found, or password doesn't match
+        return null;
     }
     
     @WebMethod
