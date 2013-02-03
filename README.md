@@ -5,7 +5,7 @@ System for booking flights in a fictional flight company, basically as a proof o
 
 Architecture description:
 -----------------------
-For this web service it was implemented 4 operations (Web Methods), which were:
+For this web service 4 operations (Web Methods) were implemented:
 
 authUser: receives an username and a password and in case they exist and match on the database it returns an unique token, otherwise returns null. All the other operations require this token to be sent.
 
