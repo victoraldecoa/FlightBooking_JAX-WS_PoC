@@ -39,11 +39,6 @@ public class FlightBookingService {
         return null;
     }
     
-    @WebMethod
-    public void logout(String token) {
-        // TODO forget token removing the user from the logged in users list
-    }
-    
     String[] possibleCities = { "Madrid", "Venice", "Lisbon", "Stockholm" };
     
     private boolean isTokenValid(String token) {
