@@ -7,15 +7,15 @@ Architecture description:
 -----------------------
 For this web service 4 operations (Web Methods) were implemented:
 
-authUser: receives an username and a password and in case they exist and match on the database it returns an unique token, otherwise returns null. All the other operations require this token to be sent.
+authUser: it receives a username and a password and in case they exist and match on the database it returns a unique token, otherwise it returns null. All the other operations require this token to be sent.
 
-checkItinerary: receives a departure city and a destination city and returns a possible route (itinerary) to it.
+checkItinerary: it receives a departure city and a destination city and returns a possible route (itinerary) to.
 
-checkAvailable: receives an itinerary and a date, checks if is there an available flight for that date and returns the price to it.
+checkAvailable: it receives an itinerary and a date and it checks if there are available flights for that date. If there are available flights, it returns their price. If there are not available flights a price of 0 is returned.
 
-bookTicket: receives an itinerary and a date (previously confirmed as available) and a credit card number. In case the credit card is accepted it returns a booking id, otherwise it returns null.
+bookTicket: it receives an itinerary and a date (previously confirmed as available) and a credit card number. In case the credit card is accepted it returns a booking id, otherwise it returns null. If the user does not wish to go through with the booking they can press 'Enter' and they will exit the service. 
 
-Example console output:
+Example of console output:
 -----------------------
 	Username: gdfsg
 	Password: sfdgds
