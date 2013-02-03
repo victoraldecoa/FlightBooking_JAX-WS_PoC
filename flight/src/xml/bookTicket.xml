@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:flig="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <flig:bookTicket>
+         <!--Zero or more repetitions:-->
+         <arg0>
+            <!--Optional:-->
+            <departureCity>Stockholm</departureCity>
+            <!--Optional:-->
+            <destinationCity>Berlim</destinationCity>
+
+         </arg0>
+         <arg0>
+
+            <!--Optional:-->
+            <departureCity>Berlim</departureCity>
+            <!--Optional:-->
+            <destinationCity>Madrid</destinationCity>
+         </arg0>
+
+         <!--Optional:-->
+         <arg1>2013-02-06</arg1>>
+
+         <!--Optional:-->
+         <arg2>1234-5678-9012-3456</arg2>
+
+         <!--Optional:-->
+         <arg3>jfdoKJgUOUG8SD89568gGDhjkgid</arg3>
+      </flig:bookTicket>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:checkAvailableResponse xmlns:ns2="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess">
+         <return>1500.0</return>
+      </ns2:checkAvailableResponse>
+   </S:Body>
+</S:Envelope>
