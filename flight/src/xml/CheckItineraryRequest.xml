@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:flig="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <flig:checkItinerary>
+         <!--Optional:-->
+         <arg0>sStockholm</arg0>
+         <!--Optional:-->
+         <arg1>Madrid</arg1>
+         <!--Optional:-->
+         <arg2>jfdoKJgUOUG8SD89568gGDhjkgid</arg2>
+      </flig:checkItinerary>
+   </soapenv:Body>
+</soapenv:Envelope>

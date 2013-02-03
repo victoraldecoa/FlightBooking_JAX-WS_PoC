@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cir:authUser
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:cir='http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess'
+    xsi:schemaLocation='http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess src/FlightBookingProcess_schema1.xsd'>
+    <return>
+        <departureCity>Stockholm</departureCity>
+        <destinationCity>Madrid</destinationCity>
+    </return>
+</cir:authUser>

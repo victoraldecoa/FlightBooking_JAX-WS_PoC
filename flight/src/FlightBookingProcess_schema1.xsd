@@ -83,15 +83,5 @@
       <xs:element name="return" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-
-  <xs:complexType name="logout">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="logoutResponse">
-    <xs:sequence/>
-  </xs:complexType>
 </xs:schema>
 

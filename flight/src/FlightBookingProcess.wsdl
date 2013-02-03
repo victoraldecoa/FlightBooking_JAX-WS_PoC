@@ -18,17 +18,17 @@
   <message name="checkAvailableResponse">
     <part name="parameters" element="tns:checkAvailableResponse"/>
   </message>
-  <message name="logout">
-    <part name="parameters" element="tns:logout"/>
-  </message>
-  <message name="logoutResponse">
-    <part name="parameters" element="tns:logoutResponse"/>
-  </message>
   <message name="authUser">
     <part name="parameters" element="tns:authUser"/>
   </message>
   <message name="authUserResponse">
     <part name="parameters" element="tns:authUserResponse"/>
+  </message>
+  <message name="logout">
+    <part name="parameters" element="tns:logout"/>
+  </message>
+  <message name="logoutResponse">
+    <part name="parameters" element="tns:logoutResponse"/>
   </message>
   <message name="bookTicket">
     <part name="parameters" element="tns:bookTicket"/>
@@ -45,13 +45,13 @@
       <input wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/checkAvailableRequest" message="tns:checkAvailable"/>
       <output wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/checkAvailableResponse" message="tns:checkAvailableResponse"/>
     </operation>
-    <operation name="logout">
-      <input wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/logoutRequest" message="tns:logout"/>
-      <output wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/logoutResponse" message="tns:logoutResponse"/>
-    </operation>
     <operation name="authUser">
       <input wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/authUserRequest" message="tns:authUser"/>
       <output wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/authUserResponse" message="tns:authUserResponse"/>
+    </operation>
+    <operation name="logout">
+      <input wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/logoutRequest" message="tns:logout"/>
+      <output wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/logoutResponse" message="tns:logoutResponse"/>
     </operation>
     <operation name="bookTicket">
       <input wsam:Action="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess/FlightBookingService/bookTicketRequest" message="tns:bookTicket"/>
@@ -78,7 +78,7 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="logout">
+    <operation name="authUser">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -87,7 +87,7 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="authUser">
+    <operation name="logout">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

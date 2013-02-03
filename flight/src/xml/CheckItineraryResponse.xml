@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:checkItineraryResponse xmlns:ns2="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess">
+         <return>
+            <departureCity>Stockholm</departureCity>
+            <destinationCity>Berlin</destinationCity>
+         </return>
+         <return>
+            <departureCity>Berlin</departureCity>
+            <destinationCity>Madrid</destinationCity>
+         </return>
+      </ns2:checkItineraryResponse>
+   </S:Body>
+</S:Envelope>
