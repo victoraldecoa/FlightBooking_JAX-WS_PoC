@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess" xmlns:tns="http://jawxs.flightservice.kth.se/jaxws/flightbookingprocess" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="authUser" type="tns:authUser"/>
+
+  <xs:element name="authUserResponse" type="tns:authUserResponse"/>
+
+  <xs:element name="bookTicket" type="tns:bookTicket"/>
+
+  <xs:element name="bookTicketResponse" type="tns:bookTicketResponse"/>
+
+  <xs:element name="checkAvailable" type="tns:checkAvailable"/>
+
+  <xs:element name="checkAvailableResponse" type="tns:checkAvailableResponse"/>
+
+  <xs:element name="checkItinerary" type="tns:checkItinerary"/>
+
+  <xs:element name="checkItineraryResponse" type="tns:checkItineraryResponse"/>
+
+  <xs:element name="logout" type="tns:logout"/>
+
+  <xs:element name="logoutResponse" type="tns:logoutResponse"/>
+
+  <xs:complexType name="checkAvailable">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:flight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="flight">
+    <xs:sequence>
+      <xs:element name="departureCity" type="xs:string" minOccurs="0"/>
+      <xs:element name="destinationCity" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkAvailableResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkItinerary">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkItineraryResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:flight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bookTicket">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:flight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg3" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bookTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authUser">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logout">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logoutResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+

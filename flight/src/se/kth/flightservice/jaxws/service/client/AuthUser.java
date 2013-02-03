@@ -7,17 +7,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for flight complex type.
+ * <p>Java class for authUser complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="flight">
+ * &lt;complexType name="authUser">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="departureCity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="destinationCity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,61 +27,61 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "flight", propOrder = {
-    "departureCity",
-    "destinationCity"
+@XmlType(name = "authUser", propOrder = {
+    "arg0",
+    "arg1"
 })
-public class Flight {
+public class AuthUser {
 
-    protected String departureCity;
-    protected String destinationCity;
+    protected String arg0;
+    protected String arg1;
 
     /**
-     * Gets the value of the departureCity property.
+     * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDepartureCity() {
-        return departureCity;
+    public String getArg0() {
+        return arg0;
     }
 
     /**
-     * Sets the value of the departureCity property.
+     * Sets the value of the arg0 property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDepartureCity(String value) {
-        this.departureCity = value;
+    public void setArg0(String value) {
+        this.arg0 = value;
     }
 
     /**
-     * Gets the value of the destinationCity property.
+     * Gets the value of the arg1 property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDestinationCity() {
-        return destinationCity;
+    public String getArg1() {
+        return arg1;
     }
 
     /**
-     * Sets the value of the destinationCity property.
+     * Sets the value of the arg1 property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDestinationCity(String value) {
-        this.destinationCity = value;
+    public void setArg1(String value) {
+        this.arg1 = value;
     }
 
 }
